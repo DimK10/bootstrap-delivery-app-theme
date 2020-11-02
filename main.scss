@@ -1,0 +1,158 @@
+$theme-colors: (
+  'primary': #64cec1,
+);
+
+$primary: #64cec1;
+// Secondary variable in bootstrap theme
+$white: #fbfbfb;
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+// Custom css
+.main-form {
+  width: 450px;
+  margin: auto;
+}
+
+* {
+  &::-moz-selection {
+    background-color: $primary;
+  }
+  &::selection {
+    background-color: $primary;
+  }
+}
+.vh-100 {
+  min-height: 100vh;
+}
+
+.form-check {
+  padding-left: 0;
+
+  & input[type='checkbox'] {
+    width: auto;
+    opacity: 0.00000001;
+    position: absolute;
+    left: 0;
+    margin-left: -20px;
+
+    &:checked ~ label::before {
+      color: $primary;
+    }
+
+    &:checked ~ label::after {
+      -webkit-transform: rotate(-45deg) scale(1);
+      transform: rotate(-45deg) scale(1);
+    }
+    &:focus + label::before {
+      outline: 0;
+    }
+  }
+
+  & label {
+    position: relative;
+    padding-top: 0.15rem;
+
+    min-height: 34px;
+    display: block;
+    padding-left: 40px;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+    vertical-align: sub;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin: 4px;
+      width: 22px;
+      height: 22px;
+      transition: transform 0.28s ease;
+      border-radius: 3px;
+      border: 2px solid $primary;
+    }
+    &:after {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 5px;
+      border-bottom: 2px solid $primary;
+      border-left: 2px solid $primary;
+      -webkit-transform: rotate(-45deg) scale(0);
+      transform: rotate(-45deg) scale(0);
+      transition: transform ease 0.25s;
+      will-change: transform;
+      position: absolute;
+      top: 12px;
+      left: 10px;
+    }
+    & span {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.register-title {
+  background-color: $white;
+}
+
+// Line for register login
+.line-web {
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+  height: 100%;
+
+  fill: $white;
+}
+
+.line-mobile {
+  display: none;
+}
+
+.img {
+  background-image: url('images/bakery.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@include media-breakpoint-down(sm) {
+  .container-fluid {
+    // display: block !important;
+    flex-flow: column;
+  }
+
+  .login-form {
+    width: 100%;
+    order: 2;
+    max-width: 100%;
+    display: block;
+    margin-bottom: 3rem;
+  }
+
+  .img-container {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    position: relative;
+  }
+
+  .line-web {
+    display: none;
+  }
+
+  .line-mobile {
+    display: block;
+    position: absolute;
+    fill: $white;
+    bottom: 0;
+    left: 0;
+    // opacity: 0;
+  }
+}

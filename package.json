@@ -1,0 +1,14 @@
+{
+  "name": "bootstrap-delivery-app-theme",
+  "version": "1.0.0",
+  "description": "This is a custom theme created for a fictinonal delivery app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dimitris Kaitantzidis",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.3"
+  }
+}
